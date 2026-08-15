@@ -1,3 +1,4 @@
+
 /* ============ DATA ============ */
 const projects = [
   {
@@ -5,7 +6,8 @@ const projects = [
     title: 'DPRAZO',
     stack: ['Laravel', 'Livewire', 'FilamentPHP'],
     link: { type: 'deploy', url: 'https://sistema.dprazo.cloud/admin/login' },
-    badge: null,
+    badge: null, 
+    image: '<img src="/imgs/dprazo.png" alt="">',
   },
   {
     key: 'controlAttendances',
@@ -13,6 +15,7 @@ const projects = [
     stack: ['Laravel', 'PHP'],
     link: { type: 'github', url: 'https://github.com/devbreno01/control-attendances-api' },
     badge: null,
+    image: '<img src="/imgs/laravel.jpeg" alt="">',
   },
   {
     key: 'brpizza',
@@ -20,6 +23,7 @@ const projects = [
     stack: ['Node.js', 'Next.js', 'React Native'],
     link: { type: 'github', url: 'https://github.com/devbreno01/br-pizza' },
     badge: 'inProgress',
+    image: '<img src="/imgs/br-pizza.png" alt="br-pizza">',
   },
   {
     key: 'yig',
@@ -27,6 +31,7 @@ const projects = [
     stack: ['Landing Page'],
     link: { type: 'deploy', url: 'https://yigagencia.com.br/' },
     badge: null,
+    image: '<img src="imgs/yig.png" alt="">',
   },
   {
     key: 'patrihub',
@@ -34,6 +39,7 @@ const projects = [
     stack: ['Spring Boot', 'Java', 'React', 'Vite'],
     link: { type: 'github', url: 'https://github.com/devbreno01/patri-hub' },
     badge: null,
+    image: '<img src="imgs/spring-react.jpeg" alt="">',
   },
 ];
 
@@ -149,6 +155,7 @@ function iconFor(tech) {
 function renderProjects() {
   const grid = document.getElementById('projects-grid');
   grid.innerHTML = '';
+
   projects.forEach(p => {
     const t = dict[currentLang];
     const linkLabel = p.link.type === 'deploy' ? t['projects.viewDeploy'] : t['projects.viewCode'];
@@ -160,6 +167,7 @@ function renderProjects() {
       ? `<span class="absolute top-4 right-4 bg-amber-400 text-[#1a1400] text-[11px] font-mono-tight font-semibold px-2.5 py-1 rounded-full">${t['projects.' + p.badge]}</span>`
       : '';
 
+
     const stackChips = p.stack.map(s => {
       const icon = iconFor(s);
       return `<span class="skill-chip">${icon ? `<i class="${icon}"></i>` : ''} ${s}</span>`;
@@ -170,7 +178,7 @@ function renderProjects() {
     card.innerHTML = `
       ${badge}
       <div class="h-40 surface-soft flex items-center justify-center border-b divider">
-        <span class="font-mono-tight text-xs text-muted">// preview em breve</span>
+        ${p.image}
       </div>
       <div class="p-6">
         <h3 class="font-mono-tight font-semibold text-lg mb-2">${p.title}</h3>
@@ -205,10 +213,12 @@ function renderExperience() {
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[lang][key] !== undefined) el.textContent = dict[lang][key];
   });
+
   document.querySelector('[data-i18n-html="about.text"]').innerHTML = dict[lang]['about.html'];
   document.getElementById('typed-line').textContent = '';
   typeLine(dict[lang]['hero.typed']);
