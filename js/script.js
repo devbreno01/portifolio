@@ -10,14 +10,6 @@ const projects = [
     image: '<img src="/imgs/dprazo.png" alt="">',
   },
   {
-    key: 'controlAttendances',
-    title: 'Control Attendances',
-    stack: ['Laravel', 'PHP'],
-    link: { type: 'github', url: 'https://github.com/devbreno01/control-attendances-api' },
-    badge: null,
-    image: '<img src="/imgs/laravel.jpeg" alt="">',
-  },
-  {
     key: 'brpizza',
     title: 'BrPizza',
     stack: ['Node.js', 'Next.js', 'React Native'],
@@ -32,6 +24,14 @@ const projects = [
     link: { type: 'deploy', url: 'https://yigagencia.com.br/' },
     badge: null,
     image: '<img src="imgs/yig.png" alt="">',
+  },
+  {
+    key: 'controlAttendances',
+    title: 'Control Attendances',
+    stack: ['Laravel', 'PHP'],
+    link: { type: 'github', url: 'https://github.com/devbreno01/control-attendances-api' },
+    badge: null,
+    image: '<img src="/imgs/laravel.jpeg" alt="">',
   },
   {
     key: 'patrihub',
@@ -58,7 +58,7 @@ const dict = {
     'hero.eyebrow': 'disponível para novas oportunidades',
     'hero.role': 'Desenvolvedor Full Stack de 21 anos. Transformo ideias em produtos funcionais, escaláveis e bem pensados.',
     'hero.cta1': 'ver projetos', 'hero.cta2': 'entrar em contato',
-    'hero.typed': 'iniciando_carreira --stack="React, Node, Laravel, TypeScript"',
+    'hero.typed': 'full stack --stack="React, Node, Laravel, TypeScript"',
     'about.title': 'Sobre mim',
     'about.html': `
       <p>Sou um desenvolvedor Full Stack de 21 anos, apaixonado por tecnologia, inovação e pela criação de soluções que realmente geram valor.</p>
@@ -100,7 +100,7 @@ const dict = {
     'hero.eyebrow': 'available for new opportunities',
     'hero.role': '21-year-old Full Stack Developer. I turn ideas into functional, scalable, well-thought-out products.',
     'hero.cta1': 'view projects', 'hero.cta2': 'get in touch',
-    'hero.typed': 'starting_career --stack="React, Node, Laravel, TypeScript"',
+    'hero.typed': 'full stack developer --stack="React, Node, Laravel, TypeScript"',
     'about.title': 'About me',
     'about.html': `
       <p>I'm a 21-year-old Full Stack developer, passionate about technology, innovation, and building solutions that truly create value.</p>
