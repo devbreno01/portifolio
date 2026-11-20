@@ -2,12 +2,12 @@
 /* ============ DATA ============ */
 const projects = [
   {
-    key: 'dprazo',
-    title: 'DPRAZO',
-    stack: ['Laravel', 'Livewire', 'FilamentPHP'],
-    link: { type: 'deploy', url: 'https://sistema.dprazo.cloud/admin/login' },
-    badge: null, 
-    image: '<img src="/imgs/dprazo.png" alt="">',
+    key: 'byghub',
+    title: 'BygHub',
+    stack: ['NestJS', 'React'],
+    link: { type: 'deploy', url: 'https://sistema.byghub.com.br' },
+    badge: null,
+    image: '<img class="project-image" src="imgs/byghub.png" alt="">',
   },
   {
     key: 'brpizza',
@@ -15,15 +15,7 @@ const projects = [
     stack: ['Node.js', 'Next.js', 'React Native'],
     link: { type: 'github', url: 'https://github.com/devbreno01/br-pizza' },
     badge: 'inProgress',
-    image: '<img src="/imgs/br-pizza.png" alt="br-pizza">',
-  },
-  {
-    key: 'yig',
-    title: 'YIG Agência',
-    stack: ['Landing Page'],
-    link: { type: 'deploy', url: 'https://yigagencia.com.br/' },
-    badge: null,
-    image: '<img src="imgs/yig.png" alt="">',
+    image: '<img class="project-image" src="imgs/br-pizza.png" alt="br-pizza">',
   },
   {
     key: 'controlAttendances',
@@ -31,7 +23,7 @@ const projects = [
     stack: ['Laravel', 'PHP'],
     link: { type: 'github', url: 'https://github.com/devbreno01/control-attendances-api' },
     badge: null,
-    image: '<img src="/imgs/laravel.jpeg" alt="">',
+    image: '<img class="project-image" src="imgs/laravel.jpeg" alt="">',
   },
   {
     key: 'patrihub',
@@ -39,11 +31,20 @@ const projects = [
     stack: ['Spring Boot', 'Java', 'React', 'Vite'],
     link: { type: 'github', url: 'https://github.com/devbreno01/patri-hub' },
     badge: null,
-    image: '<img src="imgs/spring-react.jpeg" alt="">',
+    image: '<img class="project-image" src="imgs/spring-react.jpeg" alt="">',
+  },
+  {
+    key: 'yig',
+    title: 'YIG Agência',
+    stack: ['Landing Page'],
+    link: { type: 'deploy', url: 'https://yigagencia.com.br/' },
+    badge: null,
+    image: '<img class="project-image" src="imgs/yig.png" alt="">',
   },
 ];
 
 const experiences = [
+  { key: 'mindtech' },
   { key: 'tnt' },
   { key: 'infocraft' },
   { key: 'w5i' },
@@ -70,13 +71,17 @@ const dict = {
     'skills.frontend': 'Front-end', 'skills.backend': 'Back-end', 'skills.database': 'Banco de dados', 'skills.deploy': 'Deploy',
     'projects.title': 'Projetos', 'projects.subtitle': 'Uma seleção de sistemas que projetei e desenvolvi, do zero à produção.',
     'projects.viewDeploy': 'ver deploy', 'projects.viewCode': 'ver código', 'projects.inProgress': 'Em andamento',
-    'projects.dprazo.desc': 'Sistema para controle de prazos processuais de escritórios de advocacia, com organização por urgência e status.',
+    'projects.viewMore': 'Visualizar mais',
+    'projects.byghub.desc': 'Plataforma para gerenciar fluxos de trabalho de agências de marketing e centralizar a aprovação de conteúdo com clientes.',
     'projects.controlAttendances.desc': 'API REST para controle e gestão de chamados de suporte.',
     'projects.brpizza.desc': 'Sistema full stack para gerenciamento de pedidos de uma pizzaria, com painel web e app mobile.',
     'projects.yig.desc': 'Landing page institucional para uma agência de marketing.',
     'projects.patrihub.desc': 'Sistema full stack para controle de patrimônio, com cadastro, rastreio e relatórios de bens.',
     'experience.title': 'Experiência', 'experience.subtitle': 'Linha do tempo da minha trajetória profissional.',
     'experience.present': 'Atual',
+    'experience.mindtech.role': 'Desenvolvedor Full Stack Laravel · MindTech Solutions',
+    'experience.mindtech.period': 'Atual',
+    'experience.mindtech.desc': 'Atuo no desenvolvimento full stack de aplicações com Laravel.',
     'experience.tnt.role': 'Desenvolvedor Back-end · TT&T',
     'experience.tnt.period': 'Julho de 2024 — Setembro de 2024',
     'experience.tnt.desc': 'Trabalhei como desenvolvedor estagiário utilizando Java (Spring Boot), construindo e desenvolvendo APIs REST.',
@@ -112,13 +117,17 @@ const dict = {
     'skills.frontend': 'Front-end', 'skills.backend': 'Back-end', 'skills.database': 'Database', 'skills.deploy': 'Deploy',
     'projects.title': 'Projects', 'projects.subtitle': 'A selection of systems I designed and built, from scratch to production.',
     'projects.viewDeploy': 'view deploy', 'projects.viewCode': 'view code', 'projects.inProgress': 'In progress',
-    'projects.dprazo.desc': 'System for managing legal case deadlines for law firms, with urgency-based organization and status tracking.',
+    'projects.viewMore': 'View more',
+    'projects.byghub.desc': 'Platform for managing marketing agency workflows and centralizing content approvals with clients.',
     'projects.controlAttendances.desc': 'REST API for managing and tracking support tickets.',
     'projects.brpizza.desc': 'Full stack order management system for a pizzeria, with a web dashboard and mobile app.',
     'projects.yig.desc': 'Institutional landing page for a marketing agency.',
     'projects.patrihub.desc': 'Full stack asset management system, with registration, tracking, and reporting.',
     'experience.title': 'Experience', 'experience.subtitle': 'Timeline of my professional journey.',
     'experience.present': 'Present',
+    'experience.mindtech.role': 'Full Stack Laravel Developer · MindTech Solutions',
+    'experience.mindtech.period': 'Present',
+    'experience.mindtech.desc': 'I develop full stack applications with Laravel.',
     'experience.tnt.role': 'Back-end Developer · TT&T',
     'experience.tnt.period': 'July 2024 — September 2024',
     'experience.tnt.desc': 'Worked as an intern developer using Java (Spring Boot), building and developing REST APIs.',
@@ -144,6 +153,7 @@ function iconFor(tech) {
   const map = {
     'Laravel': 'devicon-laravel-plain colored', 'PHP': 'devicon-php-plain colored',
     'Livewire': 'devicon-laravel-plain colored', 'FilamentPHP': 'devicon-laravel-plain colored',
+    'NestJS': 'devicon-nestjs-original colored',
     'Node.js': 'devicon-nodejs-plain colored', 'Next.js': 'devicon-nextjs-plain',
     'React Native': 'devicon-react-original colored', 'React': 'devicon-react-original colored',
     'Spring Boot': 'devicon-spring-plain colored', 'Java': 'devicon-java-plain colored',
@@ -173,20 +183,26 @@ function renderProjects() {
       return `<span class="skill-chip">${icon ? `<i class="${icon}"></i>` : ''} ${s}</span>`;
     }).join('');
 
+    const params = new URLSearchParams({ lang: currentLang, theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light' });
     const card = document.createElement('div');
-    card.className = 'card-hover surface border rounded-xl overflow-hidden relative';
+    card.className = 'card-hover surface border rounded-xl overflow-hidden relative flex flex-col';
     card.innerHTML = `
       ${badge}
-      <div class="h-40 surface-soft flex items-center justify-center border-b divider">
+      <div class="h-40 shrink-0 overflow-hidden surface-soft flex items-center justify-center border-b divider">
         ${p.image}
       </div>
-      <div class="p-6">
+      <div class="p-6 flex flex-col grow">
         <h3 class="font-mono-tight font-semibold text-lg mb-2">${p.title}</h3>
         <p class="text-sm text-muted mb-4 leading-relaxed">${t['projects.' + p.key + '.desc']}</p>
         <div class="flex flex-wrap gap-2 mb-5">${stackChips}</div>
-        <a href="${p.link.url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-mono-tight text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline">
-          ${linkIcon} ${linkLabel}
-        </a>
+        <div class="mt-auto flex flex-wrap items-center gap-3">
+          <a href="projetos/${p.key}.html?${params}" class="inline-flex items-center px-3 py-2 rounded-lg border divider text-sm font-semibold hover:border-brand-500 transition-colors">
+            ${t['projects.viewMore']}
+          </a>
+          <a href="${p.link.url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-mono-tight text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline">
+            ${linkIcon} ${linkLabel}
+          </a>
+        </div>
       </div>
     `;
     grid.appendChild(card);
@@ -257,10 +273,13 @@ function setTheme(isDark) {
 }
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-setTheme(prefersDark);
+const pageParams = new URLSearchParams(window.location.search);
+const initialTheme = pageParams.get('theme');
+setTheme(initialTheme === 'dark' || (initialTheme !== 'light' && prefersDark));
 
 document.getElementById('theme-toggle').addEventListener('click', () => {
   setTheme(!root.classList.contains('dark'));
+  renderProjects();
 });
 
 /* ============ NAV / MENU ============ */
@@ -294,4 +313,4 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 /* ============ INIT ============ */
 document.getElementById('year').textContent = new Date().getFullYear();
-applyLang('pt');
+applyLang(pageParams.get('lang') === 'en' ? 'en' : 'pt');
